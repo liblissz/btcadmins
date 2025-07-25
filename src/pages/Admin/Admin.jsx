@@ -9,7 +9,7 @@ import Drugpurchase from '../../Components/DrugPurchase/Drugpurchase'
 import OrderDetail from '../../Components/Orderdetail/OrderDetail'
 import Analytics from '../../Components/Analitics/Analytics'
 import PushNotification from '../../Components/Pushnotification/PushNotification'
-import RateLimit from '../../Components/pending/RateLimit'
+//import RateLimit from '../../Components/pending/RateLimit'
 
 const Admin = () => {
   return (
@@ -24,7 +24,7 @@ const Admin = () => {
                  <Route path='/purchases' element={<Drugpurchase/>}/>
                   <Route path='/orderdetail/:id' element={<OrderDetail/>}/>
                   <Route path='/pushnotification' element={<PushNotification/>}/>
-                  <Route path='/pending' element={<RateLimit/>}/>
+        {/* <Route path='/pending' element={<RateLimit/>}/>*/}
       </Routes>
     </div>
   )
