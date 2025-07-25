@@ -36,13 +36,13 @@ const dataByCompletion = [
  const averageBudget = orders.length ? (totalBudget / orders.length).toFixed(2) : 0;
   return (
     <div className='boddy'>
-         <h2 className="text-xl font-bold mb-4">Customer Order Analytics</h2>
+         <h2 className="mj">Customer Order Analytics</h2>
     <div className="analytics-container">
       
 
       <div className="analytics-grid">
         <div className="chart-card">
-      <h2 className="text-xl font-bold mb-4">Customer Order Amounts</h2>
+      <h2 className="mj">Customer Order Amounts</h2>
       <ResponsiveContainer width="100%" height={350}>
         <BarChart data={formdata}>
           <XAxis dataKey="CustomerName" />
