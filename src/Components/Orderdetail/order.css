@@ -34,6 +34,8 @@
         width: 100%;
         display: flex;
         flex-direction: column;
+  background-color: #fff !important;
+
     }
     .fruit-basket {
   width: auto;
