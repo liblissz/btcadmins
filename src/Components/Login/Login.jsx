@@ -56,7 +56,7 @@ const Login = () => {
 
             <div className="input-field">
               <i>
-                <User2Icon />
+                
               </i>
               <input
                 type="email"
@@ -69,7 +69,7 @@ const Login = () => {
 
             <div className="input-field">
               <i>
-                <LogInIcon />
+      
               </i>
               <input
                 type="password"
