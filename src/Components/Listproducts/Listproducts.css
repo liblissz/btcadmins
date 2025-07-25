@@ -61,11 +61,11 @@
         height: 60px;
     }
     .listproduct-format{
-        width: 100% !important;
+        width: 600px !important;
         overflow-x: auto !important;
     }
     .listproduct-format img{
-        width: 70px !important;
+        width: 100px !important;
         height: 80px !important;
     }
     
