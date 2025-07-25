@@ -1,0 +1,66 @@
+.navbar{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 60px;
+    box-shadow: 0 1px 3px -2px #000;
+    margin-bottom: 1px;
+    background: white;
+}
+.adminimage{
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+}
+
+.profile{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 7px;
+    width: 75px;
+}
+.navbarlogo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 300px;
+   
+}
+.navbarlogo h1{
+    display: flex;
+    flex-direction: column;
+    height: 30px;
+    justify-content: center;
+    align-items: center;
+    gap: 2px;
+ font-weight: 700;
+ color: #333;
+    font-size: 1.3rem;
+}
+.navbarlogo h1 p{
+    font-size: 12px;
+    float: left;
+    left: 0;
+    letter-spacing: 2px;
+    color: #c28664;
+}
+@media (max-width: 800px) {
+    .navbar{
+        padding: 15px 30px;
+    }
+    .navbarlogo{
+        width: 200px;
+    }
+    .navbarlogo h1{
+        font-size: 0.9rem;
+        letter-spacing: 0.8px;
+    }
+    .navbarlogo h1 p{
+        font-size: 10px !important;
+    }
+    .profile{
+        width: 60px;
+    }
+}

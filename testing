@@ -1,0 +1,125 @@
+import React, { useState } from 'react';
+import './Addproducts.css';
+import upload from '../../assets/Admin_Assets/upload_area.svg';
+
+const Addproducts = () => {
+  const [image, setImage] = useState(null);
+  const [loading, setLoading] = useState(false);
+
+  const [productDetails, setProductDetails] = useState({
+    name: "",
+    image: "",
+    category: "",
+    new_price: "",
+    old_price: ""
+  });
+
+  const imageHandler = (e) => {
+    setImage(e.target.files[0]);
+  };
+
+  const changeHandler = (e) => {
+    setProductDetails({ ...productDetails, [e.target.name]: e.target.value });
+  };
+
+  const add_product = async () => {
+    if (!image) return alert("⚠️ Please select an image");
+
+    setLoading(true);
+
+    try {
+      // Upload image
+      const formData = new FormData();
+      formData.append('product', image);
+
+      const imageUploadRes = await fetch('https://holyconceptsbackend.onrender.com/upload', {
+        method: 'POST',
+        headers: { Accept: 'application/json' },
+        body: formData,
+      });
+      const uploadData = await imageUploadRes.json();
+
+      if (!uploadData.success) {
+        alert("❌ Image upload failed.");
+        setLoading(false);
+        return;
+      }
+
+      // Update product image field
+      const product = { ...productDetails, image: uploadData.img_url };
+
+      // Send product details to backend
+      const productRes = await fetch('https://holyconceptsbackend.onrender.com/addproduct', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(product),
+      });
+
+      const productData = await productRes.json();
+
+      if (productData.success) {
+        alert("✅ Product added successfully!");
+        setProductDetails({
+          name: "",
+          image: "",
+          category: "",
+          new_price: "",
+          old_price: ""
+        });
+        setImage(null);
+      } else {
+        alert("❌ Failed to add product.");
+      }
+    } catch (err) {
+      alert("❌ An error occurred. Please try again.");
+      console.error(err);
+    }
+
+    setLoading(false);
+  };
+
+  return (
+    <div className='addproducts'>
+      <div className="addproducts-item">
+        <div className="addproduct-itemfield">
+          <p>Product Title</p>
+          <input value={productDetails.name} onChange={changeHandler} type="text" name="name" placeholder='Type Here' />
+        </div>
+      </div>
+
+      <div className="addproducts-price">
+        <div className="addproduct-itemfield">
+          <p>Price</p>
+          <input value={productDetails.old_price} onChange={changeHandler} type="text" name="old_price" placeholder='Type Here' />
+        </div>
+        <div className="addproduct-itemfield">
+          <p>Offer Price</p>
+          <input value={productDetails.new_price} onChange={changeHandler} type="text" name="new_price" placeholder='Type Here' />
+        </div>
+      </div>
+
+      <div className="addproduct-itemfield">
+        <p>Product Category</p>
+        <select value={productDetails.category} onChange={changeHandler} name="category" className='addproduct-selector'>
+          <option value="">Select</option>
+          <option value="men">Men</option>
+          <option value="kid">Kid</option>
+          <option value="women">Women</option>
+        </select>
+      </div>
+
+      <div className="addproduct-itemfield">
+        <label htmlFor="file-input">
+          <img src={image ? URL.createObjectURL(image) : upload} alt="upload" className='addproduct-thumbnail-image' />
+        </label>
+        <input onChange={imageHandler} type="file" name='image' id='file-input' hidden />
+      </div>
+
+      <button onClick={add_product} className='addproduct-btn' disabled={loading}>
+        {loading ? "Processing..." : "Add"}
+      </button>
+    </div>
+  );
+};
+
+export default Addproducts;
