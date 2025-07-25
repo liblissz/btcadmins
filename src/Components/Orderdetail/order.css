@@ -10,6 +10,7 @@
         scrollbar-width: none;
         padding: 20px;
         font-size: 13px;
+        color:  #333 !important;
     }
     @media (max-width: 500px) {
         .heder{
@@ -38,6 +39,7 @@
   width: auto;
   margin: auto;
   height: auto;
+  background-color: #fff !important;
   margin-bottom: 20px;
 }
 .fruit-basket h1 {
