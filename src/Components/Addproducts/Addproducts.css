@@ -67,4 +67,7 @@ font-weight: 500;
         padding: 30px;
         margin: 20px;
     }
+    .header-row{
+        overflow-x :auto;
+    }
 }
