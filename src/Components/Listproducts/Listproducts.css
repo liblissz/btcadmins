@@ -55,7 +55,8 @@
     .listproduct-format-main{
         padding: 15px 0px;
         color: #454545;
-        font-size: 12px;
+        font-size: 12px;   width: 600px !important;
+        overflow-x: auto !important;
     }
     .listproduct-product-icon{
         height: 60px;
