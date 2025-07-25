@@ -30,7 +30,8 @@
 
 .listproduct-format{
     align-items: center;
-    font-weight: 500
+    font-weight: 500;
+   
 }
 
 .removeproduct-icon{
@@ -58,6 +59,14 @@
     }
     .listproduct-product-icon{
         height: 60px;
+    }
+    .listproduct-format{
+        width: 100% !important;
+        overflow-x: auto !important;
+    }
+    .listproduct-format img{
+        width: 70px !important;
+        height: 80px !important;
     }
     
 }
