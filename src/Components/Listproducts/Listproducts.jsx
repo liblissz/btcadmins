@@ -51,7 +51,6 @@ fetchuser();
 <p>Cost price</p>
 <p>Sale Price</p>
 <p>Category</p>
-<p>Remove</p>
       </div>
 
       <div className="listsproduct-allproducts">
@@ -65,7 +64,6 @@ fetchuser();
   <p>{product.CostPrice}frs</p>
   <p>{product.SalePrice}frs</p>
 <p>{product.Category}</p>
-<button className='addproduct-btn' style={{height: "30px", width: "70px", marginTop: "-4px"}}>details</button>
   </div>
   <hr />
   </>
