@@ -4,11 +4,12 @@
   padding: 30px;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   background-color: transparent;
-  color: var(--dark);
+  color: #333 !important;
   display: flex;
   margin-top: 10px;
   width: 100%;
   height: auto;
+  background-color: white !important;
   justify-content: space-between;
   align-items: center;
 }
