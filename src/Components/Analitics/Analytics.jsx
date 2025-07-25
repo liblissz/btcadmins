@@ -55,7 +55,7 @@ const dataByCompletion = [
       </div>
        <div className="analytics-grid">
         <div className="chart-card">
-           <h2 className="text-xl font-bold mb-4">Customer Order Status</h2>
+           <h2 className="mj">Customer Order Status</h2>
           <ResponsiveContainer width="100%" height={300}>
             <PieChart>
               <Pie
