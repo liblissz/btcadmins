@@ -42,7 +42,7 @@ const dataByCompletion = [
 
       <div className="analytics-grid">
         <div className="chart-card">
-      <h2 className="mj">Customer Order Amounts</h2>
+      <h2 className="mj" style={{color: "#fff !important"}}>Customer Order Amounts</h2>
       <ResponsiveContainer width="100%" height={350}>
         <BarChart data={formdata}>
           <XAxis dataKey="CustomerName" />
@@ -77,8 +77,8 @@ const dataByCompletion = [
         </div>
         </div>
     </div>
-        <div className="stats-summary">
-        <p><strong>Total Orders:</strong> <span>{orders.length}</span> </p>
+        <div className="stats-summary" style={{background: "white !important"}}>
+        <p ><strong>Total Orders:</strong> <span>{orders.length}</span> </p>
         <p><strong>Total Amount:</strong>  <span> {totalBudget.toLocaleString()}frs</span> </p>
         <p><strong>Average Budget:</strong> <span> {averageBudget}frs</span></p>
       </div>
