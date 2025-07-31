@@ -35,8 +35,8 @@ const dataByCompletion = [
   const totalBudget = orders.reduce((sum, p) => sum + (p.totalAmount || 0), 0);
  const averageBudget = orders.length ? (totalBudget / orders.length).toFixed(2) : 0;
   return (
-    <div className='boddy'>
-         <h2 className="mj">Customer Order Analytics</h2>
+    <div className='boddy'  style={{background: "white !important"}}>
+         <h2 className="mj"  style={{background: "white !important"}}>Customer Order Analytics</h2>
     <div className="analytics-container">
       
 
