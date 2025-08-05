@@ -23,7 +23,7 @@ const Login = () => {
       const response = await axios.post('https://btcbackend-e7yt.onrender.com/login', {
        Email: email,
       Password:  password,
-      Role:  role,
+     
       });
         
       const { status, data } = response;
@@ -78,16 +78,6 @@ const Login = () => {
                 placeholder="Password*"
                 required
               />
-            </div>
-
-            <div className="select">
-              <select value={role} onChange={(e) => setrole(e.target.value)} required>
-                <option value="" disabled>
-                  Select a user role
-                </option>
-                <option value="admin">Admin</option>
-                <option value="seller">Seller</option>
-              </select>
             </div>
 
             <input type="submit" value={loading? "loading...":  "Sign in"} disabled={loading} className="btn solid" />
