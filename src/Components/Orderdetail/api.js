@@ -3,11 +3,11 @@ import axios from 'axios';
 
 // Pages/api.js
 export function confirmOrder(orderId, pin) {
-  return axios.post(`http://localhost:2500/order/updatestatus/${orderId}`, { pin });
+  return axios.post(`https://btcbackend-e7yt.onrender.com/order/updatestatus/${orderId}`, { pin });
 }
 
 
 
 export function downloadReceipt(orderId) {
-  return axios.get(`http://localhost:2500/order/receipt/${orderId}`, { responseType: 'blob' }); 
+  return axios.get(`https://btcbackend-e7yt.onrender.com/order/receipt/${orderId}`, { responseType: 'blob' }); 
 }
